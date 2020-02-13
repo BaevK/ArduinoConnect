@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
                 if (comboBox2.Text != null && comboBox1.SelectedItem != null)
                 {
                     ConnectToArduino();
-                    
+                    port.DtrEnable = true;
                 }
                 else
                     MessageBox.Show("выберите порт и частоту");
@@ -155,6 +155,11 @@ namespace WindowsFormsApp1
         {
             read.Abort();
             port.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
         }
     }
 }
