@@ -153,8 +153,10 @@ namespace WindowsFormsApp1
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            read.Abort();
-            port.Close();
+            if(read!=null)
+                read.Abort();
+            if (port!=null)
+                port.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
